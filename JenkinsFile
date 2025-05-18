@@ -23,4 +23,10 @@ pipeline {
             }
         }
     }
+
+    post {
+        success {
+            archiveArtifacts artifacts: 'learn-jenkins-app/build/**', fingerprint: true
+        }
+    }
 }
